@@ -19,7 +19,13 @@ int main(void)
 
     if ( n==1)
     {
-        cout << "enter";
+        int d;
+        cout << "enter the dollars : ";
+        cin >> d;
+        float ruppes = d * 82.87 ; 
+
+        cout << d  << " is equl to " << ruppes << endl ;
+
     }
 
 
