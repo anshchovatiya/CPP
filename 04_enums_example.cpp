@@ -1,38 +1,30 @@
-#include<iostream>
+#include <iostream>
 
- using namespace std;
+// Define an enumerated type for the possible errors in the program
+enum Errors
+{
+    a,b,c
+};
 
+int main()
+{
+    // Declare a variable n of type int and initialize it to the value c
+    int n = c;
 
-    // const int a = 0, b=1, c=1;
-
-    // Intstead of writing this we can write it like
-
-    typedef enum Errors
+    // Write a series of if-else statements to check if the value of n is equal to a, b, or c
+    // and print a message accordingly
+    if (n == a)
     {
-        a,b,c
-    } errors;
-
-
-
- int main(void){
-
-    int n;
-
-    n=c;
-
-    if (n==a)
-    {
-        cout << "It's first error" <<endl;
+        std::cout << "It's the first error" << std::endl;
     }
-    else if(n==1)
+    else if (n == b)
     {
-        cout << "It's second error" << endl;
+        std::cout << "It's the second error" << std::endl;
     }
-    else if (n==2) 
+    else if (n == c)
     {
-        cout << "It's third error " << endl;
+        std::cout << "It's the third error" << std::endl;
     }
 
-    
-
+    return 0;
 }
