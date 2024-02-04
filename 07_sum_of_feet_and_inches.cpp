@@ -1,3 +1,5 @@
+// write a program to add feets and inches
+
 #include<iostream>
 
  using namespace std;
@@ -8,7 +10,6 @@
     int feet;
     float inches;
  } par;
-
 
  par sum(par ,par );
 
