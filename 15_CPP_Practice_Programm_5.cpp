@@ -21,7 +21,6 @@ private:
     float Total;
 
 public:
-
     // take data as an input
     void INPUT()
     {
@@ -29,7 +28,8 @@ public:
              << "Enter the book number : ";
         cin >> BOOK_NO;
 
-        getchar();
+        // getchar();
+        cin.ignore(); // It will ignore first character of input
 
         cout << "Enter the Title of book : ";
         getline(cin, BOOK_TITLE);
@@ -48,9 +48,10 @@ public:
         Total = Total_Cost(Qty, Price);
 
         cout << endl
-             << "BOOK NO       : " << BOOK_NO<< endl;
+             << "BOOK NO       : " << BOOK_NO << endl;
         cout << "TITLE OF BOOK : " << BOOK_TITLE << endl;
-        cout << "Total cost    : " << Total << endl << " ";
+        cout << "Total cost    : " << Total << endl
+             << " ";
     }
 };
 
@@ -61,13 +62,6 @@ int main(void)
     BOOK1.INPUT();
     BOOK1.PURCHASE();
 }
-
-
-
-
-
-
-
 
 //  5. Define a class BOOK with the following specifications :
 

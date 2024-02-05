@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#define N 5  // number of subjects
+#define N 5 // number of subjects
 
 class REPORT
 {
@@ -36,7 +36,6 @@ private:
     }
 
 public:
-
     // function to take input and calculat total and avg marks
     void READINFO()
     {
@@ -44,7 +43,8 @@ public:
              << "Enter Admission number : ";
         cin >> adno;
 
-        getchar();
+        // getchar();
+        cin.ignore(); // It will ignore first character of input
 
         cout << "Enter student name : ";
         getline(cin, name);
@@ -73,23 +73,13 @@ public:
     }
 };
 
-
-int main (void)
+int main(void)
 {
     REPORT stu1;
 
     stu1.READINFO();
     stu1.DISPLAYINFO();
 }
-
-
-
-
-
-
-
-
-
 
 // 6. Define a class REPORT with the following specification:
 

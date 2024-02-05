@@ -5,7 +5,6 @@ using namespace std;
 class TEST
 {
 private:
-    
     int Testcode, NoCandidate, CenterReqd;
     string Description;
 
@@ -16,7 +15,6 @@ private:
     }
 
 public:
-
     // take the data from user as input and calculate other data
     void SCHEDULE()
     {
@@ -24,7 +22,8 @@ public:
              << "code of the test : ";
         cin >> Testcode;
 
-        getchar();
+        cin.ignore(); // It will ignore first character of input
+        // getchar();
 
         // If we want to input entire string we need to use get line function
         cout << "Write a Description : ";
@@ -43,7 +42,8 @@ public:
              << "TestCode         : " << Testcode << endl;
         cout << "Description      : " << Description << endl;
         cout << "NoCandidate      : " << NoCandidate << endl;
-        cout << "Required centers : " << CenterReqd << endl << " ";
+        cout << "Required centers : " << CenterReqd << endl
+             << " ";
     }
 };
 
@@ -54,15 +54,6 @@ int main(void)
     June.SCHEDULE();
     June.DISPTEST();
 }
-
-
-
-
-
-
-
-
-
 
 // 3. Define a class TEST in C++ with following description:
 

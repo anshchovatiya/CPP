@@ -39,8 +39,10 @@ public:
              << "Enter the Flight number : ";
         cin >> Flight_number;
 
+        cin.ignore(); // It will ignore first character of input
+
         cout << "Enter your Destination : ";
-        cin >> Destination;
+        getline(cin, Destination);
 
         cout << "Enter the distance : ";
         cin >> Distance;
