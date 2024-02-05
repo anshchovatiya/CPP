@@ -58,9 +58,9 @@ int main(void)
         float gst = (18*(float)bill_amount)/100;
         float net_bill = bill_amount + (float)gst;
 
-        cout << endl << "Rate\tQty\tAmount     Discount\tBill amount\tGst\t  Net_bill" << endl;
-        cout << rate << "\t" << qty  << "\t" << amount  << "        " << discount  << "\t  " << bill_amount << "\t        " << gst  << "\t   " << net_bill << "\t"  << endl ;
-
+        cout << endl << "Rate\tQty\tAmount\tDiscount\tBill amount\tGst\t  Net_bill" << endl;
+        // cout << rate << "\t" << qty  << "\t" << amount  << "        " << discount << setprecision(2) << "\t " << bill_amount  << setprecision(1) << "      " << gst  << setprecision(2) << "\t  " << net_bill  << setprecision(2)<< "\t"  << endl ;
+        printf("%d\t%d\t%d\t %.2f\t   \t%.2f\t\t%.2f\t   %.2f",rate,qty,amount,discount,bill_amount,gst,net_bill);
     }
 
     else if (n==3)

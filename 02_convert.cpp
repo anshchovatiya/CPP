@@ -7,7 +7,7 @@ int main(void)
     cout << "dollar in to rupee press 1 " << endl;
     cout << "feet in to inches press 2 " << endl;
     cout << "inches into centimeters press 3 " << endl;
-    cout << "celsius into feet press 4 " << endl;
+    cout << "celsius into fahrenheit press 4 " << endl;
     cout << "  " << endl;
 
     int n;
