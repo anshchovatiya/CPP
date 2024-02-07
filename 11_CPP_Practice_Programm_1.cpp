@@ -54,9 +54,6 @@ public:
 
     void Showdata()
     {
-
-        float v = ctotal(eng.marks, maths.marks, science.marks);
-
         cout << endl
              << "admno       : " << admno << endl;
         cout << "name        : " << sname << endl;
