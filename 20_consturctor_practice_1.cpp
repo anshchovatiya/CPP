@@ -33,26 +33,15 @@ class FLIGHT
 
     float CALFUEL(float Dis);
 
-private:
+public:
     FLIGHT(void);
     ~FLIGHT(void);
 };
 
-
-
-
-
 int main(void)
 {
-    FLIGHT no1;
+    FLIGHT number1;
 }
-
-
-
-
-
-
-
 
 float FLIGHT::CALFUEL(float Dis)
 {
@@ -69,7 +58,8 @@ float FLIGHT::CALFUEL(float Dis)
 
 FLIGHT::FLIGHT()
 {
-    cout << endl << "Enter Flight number : ";
+    cout << endl
+         << "Enter Flight number : ";
     cin >> Flight_Number;
 
     cin.ignore();
@@ -84,13 +74,13 @@ FLIGHT::FLIGHT()
 
 FLIGHT::~FLIGHT()
 {
-           cout << endl
-             << "Flight number : " << Flight_Number;
-        cout << endl
-             << "Destination   : " << Destination;
-        cout << endl
-             << "Distance      : " << Distance;
-        cout << endl
-             << "Fuel needed   : " << Fuel << endl
-             << " ";
+    cout << endl
+         << "Flight number : " << Flight_Number;
+    cout << endl
+         << "Destination   : " << Destination;
+    cout << endl
+         << "Distance      : " << Distance;
+    cout << endl
+         << "Fuel needed   : " << Fuel << endl
+         << " ";
 }
