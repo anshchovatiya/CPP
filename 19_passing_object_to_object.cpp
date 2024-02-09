@@ -5,6 +5,7 @@ using namespace std;
 class Name
 {
 private:
+
     string name;
     int marks[3];
     int total;
