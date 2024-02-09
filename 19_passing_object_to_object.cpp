@@ -20,15 +20,20 @@ public:
 
 int main(void)
 {
-    Name ansh, nayan, total;
+    Name stu1, stu2, total;
 
-    ansh.print_data();
-    nayan.print_data();
+    stu1.print_data();
+    stu2.print_data();
 
-    total.set_data_by_sum(ansh, nayan);
+    total.set_data_by_sum(stu1, stu2);
 
     total.print_data();
 }
+
+
+
+
+
 
 // this is constuctor function that is automatically awekand when ovjects were created
 Name ::Name(void)

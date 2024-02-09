@@ -28,8 +28,8 @@ Student::Student(void) //  -->consturctor defination
 
 {
     // It will automatically execute when we crate new object
-    cout << "enter the name : ";
-    cin >> s;
+    cout << endl << "enter the name : ";
+    getline(cin,s);
 
     printname();
 }
@@ -39,7 +39,7 @@ Student::Student(void) //  -->consturctor defination
 //     s = "ansh chovatiya";
 // }
 
-Student::~Student() // destructor defination
+Student::~Student() // destructor defination  // ~ -> destructor operatorn
 {
     // It will automatically execute when complier is destroying the object
     cout << endl
