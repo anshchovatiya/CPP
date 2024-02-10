@@ -19,6 +19,7 @@ public:
     int minus2(NUM, NUM);
 };
 
+// this class will allocate numbers
 class NUM
 {
     int a;
@@ -62,3 +63,34 @@ int main(void)
     int total = calculate.minus1(first, second);
     cout << total << endl;
 }
+
+
+
+
+
+
+class Solution {
+public:
+    
+    int lengthOfLastWord(string s) {
+        
+        int len=s.length()-1;
+    
+        ac:
+        int count=0;
+        for(int i=len;s[i]!=' ';i--)
+        {
+            count++;
+            if(i<0) break;
+        }
+
+
+        if(s[len]==' '&&len>=0)
+        {
+
+            len-=1;
+            goto ac;
+        }
+        return count;
+    }
+};
