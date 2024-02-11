@@ -1,10 +1,11 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp",
-        "iomanip": "cpp",
-        "*.tcc": "cpp",
-        "functional": "cpp",
-        "cmath": "cpp"
-    }
+  "files.associations": {
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "iomanip": "cpp",
+    "*.tcc": "cpp",
+    "functional": "cpp",
+    "cmath": "cpp",
+    "type_traits": "cpp"
+  }
 }
