@@ -12,6 +12,18 @@
 
 using namespace std;
 
+class Coder;
+
+// this class will combine two object and make custom datatype to return values
+class reto
+{
+    string Name;
+    float Exeperience;
+    string Roll_In_Job;
+    friend reto Get_Data(Coder, Coder);
+    friend void print_data(reto a);
+};
+
 class Coder
 {
     string Name;
@@ -33,7 +45,12 @@ public:
         getline(cin, Roll_In_Job);
     }
 
-    friend Coder Get_Data(Coder a, Coder b);
+    Coder(int a) // this is overloading constructor function
+    {
+        a = 0;
+    }
+
+    friend reto Get_Data(Coder a, Coder b);
     // friend function declaration
     friend void print_data(Coder a);
 };
@@ -41,22 +58,21 @@ public:
 int main(void)
 {
     Coder emp1, emp2;
-    // --> two objects created
-    // print_data(emp1);
-    // print_data(emp2);
 
     // calling friend function to sum the data
-    Coder emp3 = Get_Data(emp1, emp2);
-    // calling friend function to print the data
+    reto emp3 = Get_Data(emp1, emp2);
+
     print_data(emp3);
+
+    // calling friend function to print the data
 }
 
-// function to sum the data
-Coder Get_Data(Coder a, Coder b)
-// return type Class Coder
+// function to sum the data,return type Class Coder
+reto Get_Data(Coder a, Coder b)
+
 // giving two arguments which is objects
 {
-    Coder both;
+    reto both;
     both.Name = a.Name + " and " + b.Name;
     both.Exeperience = a.Exeperience + b.Exeperience;
     both.Roll_In_Job = a.Roll_In_Job + " and " + b.Roll_In_Job;
@@ -66,6 +82,16 @@ Coder Get_Data(Coder a, Coder b)
 
 // friend function to print the data
 void print_data(Coder a)
+{
+    cout << endl
+         << "Name        : " << a.Name << endl;
+    cout << "Exeperience : " << a.Exeperience << endl;
+    cout << "Roll In Job : " << a.Roll_In_Job << endl
+         << " ";
+}
+
+// this is overloading function
+void print_data(reto a)
 {
     cout << endl
          << "Name        : " << a.Name << endl;
