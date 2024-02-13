@@ -13,7 +13,8 @@ public:
         a = a1;
     }
 
-    number(number &a3) //--> If this function will commented program will still work becuase every class has default copy constuctor function
+    //--> If this function will commented program will still work becuase every class has default copy constuctor function
+    number(number &a3) 
     {
         cout << endl
              << "copy constructor has been activated and ";
@@ -40,10 +41,12 @@ int main(void)
     number two(one);
     two.display();
 
+    // this time copy constructor will not work because it is assigning the value
     number three;
-    three = one; // this time copy constructor will not work because it is assigning the value
+    three = one; 
     three.display();
 
-    number four = three; // this time copy constructor will be activated because it is creating new object
+    // this time copy constructor will be activated because it is creating new object
+    number four = three; 
     four.display();
 }
