@@ -17,15 +17,19 @@ private:
 
         if (Dis <= 1000)
         {
-            fuel = 500;
+            fuel = (Dis * 500) / 1000;
         }
         else if (Dis > 1000 && Dis <= 2000)
         {
-            fuel = 1100;
+            Dis-=1000;
+            fuel =  (Dis * 1100) / 2000 + 500;
         }
         else if (Dis > 2000)
         {
-            fuel = 2200;
+            Dis-= 2000;
+
+            fuel = (Dis * 2200) / 2000 + 1600;
+
         }
 
         return fuel;
@@ -73,25 +77,26 @@ int main(void)
     first.SHOWINFO();
 }
 
-// 4. Define a class in C++ with following description:
+/*4. Define a class in C++ with following description:
 
-// Private Members
+Private Members
 
-// A data member Flight number       of type integer
-// A data member Destination         of type string
-// A data member Distance            of type float
-// A data member Fuel                of type float
+A data member Flight number       of type integer
+A data member Destination         of type string
+A data member Distance            of type float
+A data member Fuel                of type float
 
-// A member function CALFUEL() to calculate the value of Fuel as per the following criteria
+A member function CALFUEL() to calculate the value of Fuel as per the following criteria
 
-// Distance                     Fuel
-// <=1000                       500
-// more than 1000 and <=2000    1100
-// more than 2000               2200
+Distance                     Fuel
 
-// Public Members
+<=1000                       500
+more than 1000 and <=2000    1100
+more than 2000               2200
 
-// A function FEEDINFO() to allow user to enter values for Flight Number, Destination,
-// Distance & call function CALFUEL() to calculate the quantity of Fuel
+Public Members
 
-// A function SHOWINFO() to allow user to view the content of all the data members
+A function FEEDINFO() to allow user to enter values for Flight Number, Destination,
+Distance & call function CALFUEL() to calculate the quantity of Fuel
+
+A function SHOWINFO() to allow user to view the content of all the data members*/
