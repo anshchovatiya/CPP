@@ -335,3 +335,166 @@ public:
 };
 
 ------------------------------------------------------------------------------------------------------------
+
+1281. Subtract the Product and Sum of Digits of an Integer
+
+Example 1:
+
+Input: n = 234
+Output: 15 
+Explanation: 
+Product of digits = 2 * 3 * 4 = 24 
+Sum of digits = 2 + 3 + 4 = 9 
+Result = 24 - 9 = 15
+
+int subtractProductAndSum(int n) {
+    int v=0;
+    int sum=0;
+    int product=1;
+    for(int i=1;n>0;i++)
+    {
+        v=n%10;
+        sum+=v;
+        product*=v;
+        n=n/10;
+        
+    }
+    return product-sum;
+    
+}
+
+------------------------------------------------------------------------------------------------------------
+
+1512. Number of Good Pairs
+
+Example 1:
+
+Input: nums = [1,2,3,1,1,3]
+Output: 4
+Explanation: There are 4 good pairs (0,3), (0,4), (3,4), (2,5) 0-indexed.
+
+int numIdenticalPairs(int* nums, int numsSize) {
+
+    int count=0;
+
+    for (int i=0;i<numsSize;i++)
+        {
+            for(int j=i+1;j<numsSize;j++)
+            {
+                if(nums[i]==nums[j])
+                {
+                    count++;
+                }
+            }
+        }
+        return count;
+}
+
+------------------------------------------------------------------------------------------------------------
+
+2235. Add Two Integers
+
+Example 1:
+
+Input: num1 = 12, num2 = 5
+Output: 17
+Explanation: num1 is 12, num2 is 5, and their sum is 12 + 5 = 17, so 17 is returned.
+
+int sum(int num1, int num2) {
+    return (num1)+(num2);
+}
+
+------------------------------------------------------------------------------------------------------------
+
+2413. Smallest Even Multiple
+
+Input: n = 5
+Output: 10
+Explanation: The smallest multiple of both 5 and 2 is 10.
+
+int smallestEvenMultiple(int n) {
+    int res=n*2;
+   for(int i=n;i>0;i--)
+   {
+       if(i%2==0)
+       {
+           if(i%n==0)
+           {
+              res = i;
+           }
+       }
+   }
+    return res;
+}
+
+------------------------------------------------------------------------------------------------------------
+
+2469. Convert the Temperature
+
+Input: celsius = 36.50
+Output: [309.65000,97.70000]
+Explanation: Temperature at 36.50 Celsius converted in Kelvin is 309.65 and converted in Fahrenheit is 97.70.
+
+double* convertTemperature(double celsius, int* returnSize) {
+    
+    *returnSize=2;
+
+    double *res = malloc(*returnSize*sizeof(double));
+
+    res[0] = celsius+273.15;
+    res[1] = celsius*1.80+32.00;
+
+
+    return res;
+
+
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+2769. Find the Maximum Achievable Number
+
+Input: num = 4, t = 1
+Output: 6
+Explanation: The maximum achievable number is x = 6; it can become equal to num after performing this operation:
+1- Decrease x by 1, and increase num by 1. Now, x = 5 and num = 5. 
+It can be proven that there is no achievable number larger than 6.
+
+int theMaximumAchievableX(int num, int t){
+    
+    return num+t+t;
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+2894. Divisible and Non-divisible Sums Difference
+
+Input: n = 10, m = 3
+Output: 19
+Explanation: In the given example:
+- Integers in the range [1, 10] that are not divisible by 3 are [1,2,4,5,7,8,10], num1 is the sum of those integers = 37.
+- Integers in the range [1, 10] that are divisible by 3 are [3,6,9], num2 is the sum of those integers = 18.
+We return 37 - 18 = 19 as the answer.
+
+int differenceOfSums(int n, int m) {\
+
+    int num1=0;
+    int num2=0;
+
+    for(int j=1;j<=n;j++)
+    {
+        if(j%m!=0)
+        {
+           num1+=j;
+        }
+        if(j%m==0)
+        {
+           num2+=j;
+        }
+    }
+    return num1-num2;
+}
+
+------------------------------------------------------------------------------------------------------------
