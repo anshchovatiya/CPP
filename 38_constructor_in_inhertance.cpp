@@ -27,6 +27,7 @@ class G1
          int base1;
          public :
 
+         // this is constuctor function of base class 1
          G1(int a)
          {
             cout << "base 1 constructor " << endl;
@@ -43,7 +44,9 @@ class G2
 {   
          int base2;
          public :
+   
 
+         // this is constuctor function of base class 1
          G2(int a)
          {
             cout << "base 2 constructor " << endl;
@@ -63,6 +66,8 @@ class Derived_Class : public G1, public G2
     int derived_2;
 
     public :
+
+    // this is constructor  function of derived class It will pass argements to base classes construcotr function
     Derived_Class(int ar1,int ar2,int ar3,int ar4) : G1(ar1) ,G2(ar2)
     {
           cout << "Derived class constructor " << endl;
