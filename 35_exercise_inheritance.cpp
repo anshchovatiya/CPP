@@ -22,76 +22,88 @@ protected:
     int a, b;
 
 public:
-    void get_data(int, int);
+    void get_data();
+    void get_data(int b4,int b8)
+    {
+        
+        a=b4;
+        b=b8;
+
+    }
     void print_claculation();
 };
 
 // this class is inherited from base class SimpleCalculator
-class ScientificCalculator : protected SimpleCalculator
-{
+class ScientificCalculator {
+    int a1,b1;
 public:
-    void pass_data(int a3, int b3)
+    void get_data()
     {
-        get_data(a3, b3);
+    cout << "enter the first value : " ;
+    cin >> a1;
+    
+    cout << "enter the second value : " ;
+    cin >> b1;
+
+    }
+    void get_data(int b4,int b8)
+    {
+        
+        a1=b4;
+        b1=b8;
+
     }
 
     void print_scientific()
     {
-        print_claculation();
-        cout << " A ^ B  =  " << pow(a, b) << endl
-             << " ";
+        cout << " A ^ B  =  " << pow(a1, b1) << endl;
+        cout << "sqrt(a) =  " << sqrt(a1) << endl;
+        cout << "sqrt(b) =  " << sqrt(b1) << endl;
+        cout << "tan(a)  =  " << tan(a1) << endl;
+        cout << "sin(a)  =  " << sin(a1) << endl;
+       
+             
     }
 };
 
-class single
+
+class HybridCalculator : public SimpleCalculator ,public ScientificCalculator
 {
-protected:
-    int a1;
+    public :
 
-public:
-    void passaa1(int h)
-    {
-        a1 = h;
-    }
-    void get_num()
-    {
-        cout << endl
-             << " Squar root of a : " << sqrt(a1) << endl;
-        cout << " A * PI  =  " << a1 * PI;
-    }
+            void get_data(int a,int b)
+            {
+                // this is function for amguability resolution
+                SimpleCalculator :: get_data(a,b);
+                ScientificCalculator :: get_data(a,b);
+            }
+            void print_data()
+            {
+                print_claculation();
+                print_scientific();
+            }
 };
 
-class all_mix : public ScientificCalculator, public single
-{
-public:
-    void pass_number(int a5, int a6)
-    {
-        passaa1(a5);
-        get_data(a5, a6);
-    }
 
-    void print_data()
-    {
-        get_num();
-        print_scientific();
-    }
-};
+
 
 int main()
 {
-
-    all_mix first;
-
-    first.pass_number(53, 69);
-    first.print_data();
-
+     HybridCalculator an;
+     an.get_data(85,69);
+     an.print_data();
+    
     return 0;
 }
 
-void SimpleCalculator ::get_data(int a1, int b1)
+void SimpleCalculator ::get_data()
 {
-    a = a1;
-    b = b1;
+    cout << "enter the first value : " ;
+    cin >> a;
+    
+    cout << "enter the second value : " ;
+    cin >> b;
+
 }
 
 void SimpleCalculator ::print_claculation()
