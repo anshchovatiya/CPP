@@ -8,8 +8,8 @@ class NUM; //  --> declaration of class
 class calculator
 {
 public:
-    // thsee are decalration of all member function
-    // If we try to define them here , It will not work becuase this function do not know elements of other class
+    // these are declaration of all member function
+    // If we try to define them here , It will not work because this function do not know elements of other class
     int sumofnum1(NUM, NUM);
 
     int sumofnum2(NUM, NUM);

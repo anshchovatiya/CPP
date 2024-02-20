@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// distace between two points
+// distance between two points
 
 // first point class
 

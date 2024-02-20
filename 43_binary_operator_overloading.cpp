@@ -4,16 +4,14 @@
 
 using namespace std;
 
-
 // +3 --> unary '+' operator
 // 3+5 --> binary '+' operator
 
 // --> if operator has one operand it is called unary operator
-// --> if operator had more than one operand it is called binary operator 
-
+// --> if operator had more than one operand it is called binary operator
 
 // an+rom --> 'an' and 'rom' both are user defined datatype so binary operator will not work on them because binary operator only woks on pre-defined datatype
-// --> that why there is concepts of operator overloading 
+// --> that why there is concepts of operator overloading
 
 // --> In operation overloading you have to at least provide one pre-defined data-type
 
@@ -22,6 +20,7 @@ using namespace std;
 class Check
 {
     int x, y;
+    friend Check sum(Check, Check);
 
 public:
     Check(){};
@@ -33,9 +32,6 @@ public:
         cout << "The value of x is " << x << endl;
         cout << "The value of y is " << y << endl;
     }
-
-
-
 
     // --> this is normally used method
 
@@ -49,13 +45,11 @@ public:
     //     cout << "the value of sum is " << answer.x << " + " << answer.y << " i " << endl;
     // }
 
-
-
     // Check --> return type
     // operator --> keyword
     //  " + " --> operator
     // Check a --> argument
-    Check operator + (Check a)
+    Check operator+(Check a)
     {
         Check ans;
 
@@ -63,7 +57,6 @@ public:
         ans.y = y + a.y;
 
         return ans;
-        
     }
 
     void display()
@@ -71,7 +64,6 @@ public:
         cout << "the value of x is " << x << endl;
         cout << "the value of y is " << y << endl;
     }
-
 
     void operator++()
     {
@@ -81,6 +73,15 @@ public:
     }
 };
 
+Check sum(Check an, Check rom)
+{
+    Check ans;
+    ans.x = an.x + rom.x;
+    ans.y = an.y + rom.y;
+    return ans;
+}
+
+// thr friend function will show ambiguity error because we are trying to access to objects of same class
 int main(void)
 {
     Check an(38, 69), rom(84, 69);
@@ -92,10 +93,17 @@ int main(void)
     ans = an + rom;
 
     ans.display();
-    
-    // this operator overloading function will increment both x and y 
+
+    // this operator overloading function will increment both x and y
     ++ans;
 
+
+
     ans.display();
-    // ans.plus(an, rom); --> this is for first method
+    // // ans.plus(an, rom); --> this is for first method
+
+    // Check ans1;
+    // // friend fuction example
+    // ans1=sum(an,rom);
+    // ans1.display();
 }

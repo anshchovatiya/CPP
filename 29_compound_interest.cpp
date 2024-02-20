@@ -49,7 +49,7 @@ int main(void)
 {
     compound inv1, inv2;
 
-    int p, r, t; // int interest rateffffffffffffff
+    int p, r, t; // int interest rate
     float R;     // float interest rate
 
     cout << endl

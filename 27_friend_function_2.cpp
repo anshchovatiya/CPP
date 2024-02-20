@@ -8,7 +8,7 @@ class A
 {
 private:
     int a, b;
-    // -> & shows that friend fucntion will takes orginal values not copy
+    // -> & shows that friend function will takes original values not copy
     friend void Swap_values_of_class(A &, B &);
 
 public:

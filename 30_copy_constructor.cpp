@@ -13,7 +13,7 @@ public:
         a = a1;
     }
 
-    //--> If this function will commented program will still work becuase every class has default copy constuctor function
+    //--> If this function will commented program will still work because every class has default copy constructor function
     number(number &a3) 
     {
         cout << endl
@@ -21,7 +21,7 @@ public:
         a = a3.a;
     }
 
-    // --> If this function will commented program will still work becuase every class has default copy constuctor function
+    // --> If this function will commented program will still work because every class has default copy constructor function
     void display()
     {
 
