@@ -7,5 +7,8 @@
     "functional": "cpp",
     "cmath": "cpp",
     "type_traits": "cpp"
-  }
+  },
+  "cSpell.words": [
+    "jarvus"
+  ]
 }

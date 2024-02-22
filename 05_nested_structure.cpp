@@ -17,7 +17,7 @@ typedef struct student
         float mark;
     } sub;
 
-    sub maths, sceince, chemistry;
+    sub maths, science, chemistry;
 
     int total;
     float percentage;
@@ -41,18 +41,18 @@ getchar();
         cout << endl
              << "Enter the name of a student : ";
         getline(cin, student[i].name);
-        cout << "Enter the roll number of strudent : ";
+        cout << "Enter the roll number of student : ";
         cin >> student[i].roll_num;
         // Prompt for subject marks
         cout << "enter the marks of maths : ";
         cin >> student[i].maths.mark;
-        cout << "enter the marks of sceince : ";
-        cin >> student[i].sceince.mark;
+        cout << "enter the marks of science : ";
+        cin >> student[i].science.mark;
         cout << "enter the marks of chemistry : ";
         cin >> student[i].chemistry.mark;
 
         // Calculate total marks
-        student[i].total = student[i].maths.mark + student[i].sceince.mark + student[i].chemistry.mark;
+        student[i].total = student[i].maths.mark + student[i].science.mark + student[i].chemistry.mark;
 
         // Calculate percentage
         student[i].percentage = (float)student[i].total / 3.0;

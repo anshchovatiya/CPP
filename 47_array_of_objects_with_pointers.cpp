@@ -29,8 +29,8 @@ class Student
 
 int main(void)
 {
-  Student *ptr = new Student [5];
-  Student *copy = ptr;
+  Student *ptr = new Student [5];  // ptr is first objects address and it has capacity to store 5 variables
+  Student *copy = ptr;  // this is copy of ptr because we are incrementing ptr in first loop so we need stor the home address to another pointer
 
   for (int i=0;i<5;i++)
   {
