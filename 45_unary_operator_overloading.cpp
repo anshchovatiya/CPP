@@ -31,17 +31,17 @@ class Num
 
 
 int main(void)
-{
-    Num n1(38,69);
+{ 
+    Num n1(38,69);  
 
-    n1.print();
+    n1.print();  
     n1--;
-    n1.print();
+    n1.print();  
 
-    Num n2(-59,-68);
+    Num n2(-59,-68);   
     n2.print();
-    n2--;
-    n2.print();
+    n2--;    
+    n2.print();   
    
-   
+     
 }

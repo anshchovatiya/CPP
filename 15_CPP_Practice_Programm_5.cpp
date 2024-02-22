@@ -2,17 +2,18 @@
 #include <string>
 
 using namespace std;
-
-class BOOK
-{
-private:
+   
+class BOOK      
+{  
+private:    
     int BOOK_NO;
     string BOOK_TITLE;
-    float Price;
+    float Price;        
     int Qty;
 
     // calculate total cost
-    float Total_Cost(int N, float price)
+    float Total_Cost(int  
+    N, float price)
     {
         float total = N * price;
         return total;
