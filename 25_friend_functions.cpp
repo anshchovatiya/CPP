@@ -18,7 +18,7 @@ class Coder;
 class reto
 {
     string Name;
-    float Exeperience;
+    float Experience;
     string Roll_In_Job;
     friend reto Get_Data(Coder, Coder);
     friend void print_data(reto a);
@@ -27,7 +27,7 @@ class reto
 class Coder
 {
     string Name;
-    float Exeperience;
+    float Experience;
     string Roll_In_Job;
 
 public:
@@ -38,7 +38,7 @@ public:
         getline(cin, Name);
 
         cout << "Experience : ";
-        cin >> Exeperience;
+        cin >> Experience;
 
         cin.ignore();
         cout << "Your Roll  : ";
@@ -74,7 +74,7 @@ reto Get_Data(Coder a, Coder b)
 {
     reto both;
     both.Name = a.Name + " and " + b.Name;
-    both.Exeperience = a.Exeperience + b.Exeperience;
+    both.Experience = a.Experience + b.Experience;
     both.Roll_In_Job = a.Roll_In_Job + " and " + b.Roll_In_Job;
 
     return both;
@@ -85,7 +85,7 @@ void print_data(Coder a)
 {
     cout << endl
          << "Name        : " << a.Name << endl;
-    cout << "Exeperience : " << a.Exeperience << endl;
+    cout << "Experience : " << a.Experience << endl;
     cout << "Roll In Job : " << a.Roll_In_Job << endl
          << " ";
 }
@@ -95,7 +95,7 @@ void print_data(reto a)
 {
     cout << endl
          << "Name        : " << a.Name << endl;
-    cout << "Exeperience : " << a.Exeperience << endl;
+    cout << "Experience : " << a.Experience << endl;
     cout << "Roll In Job : " << a.Roll_In_Job << endl
          << " ";
 }
