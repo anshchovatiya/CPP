@@ -5,7 +5,13 @@ using namespace std;
 
 class Student
 {
-    int Id;
+    int Id;                
+
+
+
+
+
+           
     string name;
 
 public:
@@ -14,7 +20,7 @@ public:
         cout << endl
              << "Enter the Student Id : ";
         cin >> Id;
-        cout
+        cout                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
             << "Enter the Student name : ";
         cin >> name;
     }

@@ -6,7 +6,8 @@
     "*.tcc": "cpp",
     "functional": "cpp",
     "cmath": "cpp",
-    "type_traits": "cpp"
+    "type_traits": "cpp",
+    "fstream": "cpp"
   },
   "cSpell.words": [
     "jarvus"
