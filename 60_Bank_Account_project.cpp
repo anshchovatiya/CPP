@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 
 using namespace std;
 
@@ -25,145 +24,63 @@ public:
           Account_Balance = balance;
      };
 
+     // this will handle transition between two account
+     void Account_to_Account(Bank_Account &client, double);
+
      // this function will print data of object
-     void Print_data()
-     {
-          cout << endl
-               << "Name            : " << name << endl
-               << "Account Number  : " << Account_Number << endl;
-          cout << "IFSC code       : " << IFSC_Code << endl;
-          cout << "Account Balance : " << Account_Balance << endl
-               << " ";
-     }
+     void Print_data();
 
      // this function will do deposit operations
-     void Deposit(double money)
-     {
-          if (money <= 0)
-          {
-               cout << endl
-                    << "INVALID AMOUNT !" << endl
-                    << " ";
-          }
-          else
-          {
-               Account_Balance += money;
-               cout << endl
-                    << "Money has been Deposited" << endl
-                    << " ";
-               cout << endl
-                    << "Current Status " << endl
-                    << " ";
-               Print_data();
-          }
-     }
+     void Deposit(double money);
+     // this function will do deposit operations
 
      // this function will do withdraw operations
-     void Withdraw(double money)
-     {
-          if (money <= 0)
-          {
-               cout << endl
-                    << "INVALID AMOUNT !" << endl
-                    << " ";
-          }
-
-          else if (money > Account_Balance)
-          {
-               cout << endl
-                    << "INSUFFICIENT BALANCE !" << endl
-                    << " ";
-          }
-
-          else
-          {
-               Account_Balance -= money;
-               cout << endl
-                    << "Money has been Withdrawn" << endl
-                    << " ";
-
-               cout << endl
-                    << "Current Status  " << endl
-                    << " ";
-               Print_data();
-          }
-     }
+     void Withdraw(double money);
 
      // this function will make receipt of the transition
-     void Make_Receipt(int a, double amount1 = 0)
-     {
-          // this method will convert string name to array of characters
-          char Name[100];
-          int i = 0;
-          while (name[i] != '\0')
-          {
-               Name[i] = name[i];
-               i++;
-          }
-          Name[i] = '\0';
+     void Make_Receipt(int, Bank_Account, double);
 
-          // this method will convert string IFSC_CODE to array of characters
-          char Code[100];
-          int t = 0;
-          while (IFSC_Code[t] != '\0')
-          {
-               Code[t] = IFSC_Code[t];
-               t++;
-          }
-          Code[t] = '\0';
-
-          // this will make a file and store data in it
-          FILE *ptr1;
-          ptr1 = fopen("Receipt.txt", "w");
-          fprintf(ptr1, "________________________________RECEIPT________________________________\n");
-
-          if (a == 1)
-          {
-               fprintf(ptr1, "\nCurrent Status\n");
-          }
-          else if (a == 2)
-          {
-               fprintf(ptr1, "\nThe Amount of %.2lf Rs. has Been Deposited\n \nCurrent Status\n", amount1);
-          }
-          else if (a == 3)
-          {
-               fprintf(ptr1, "\nThe Amount %.2lf Rs. has Been Withdrawn \n \nCurrent Status\n", amount1);
-          }
-
-          fprintf(ptr1, "\nName            : %s\n", Name);
-          fprintf(ptr1, "Account Number  : %lld\n", Account_Number);
-          fprintf(ptr1, "IFSC code       : %s\n", Code);
-          fprintf(ptr1, "Account Balance : %.2f\n", Account_Balance);
-          fclose(ptr1);
-     }
+     // this function will check balance of Account
+     void Check_Balance();
 };
 
 int main()
 {
      // this is data of user in bank
-     cout << endl
-          << "-------------------------------------------------------------------------" << endl
-          << " ";
-     Bank_Account user[5];
-     user[0] = Bank_Account{"Ansh Chovatiya", 300556477845, "SBI60459CO", 85000.45};
-     user[1] = Bank_Account{"Romin Maldiya", 300548556354, "SBI60459CO", 250000.93};
-     user[2] = Bank_Account{"Ridham Pansuriya", 308755647854, "SBI60459CO", 95000.46};
-     user[3] = Bank_Account{"Vivek Morya", 30089715564974, "SBI60459CO", 158600.45};
-     user[4] = Bank_Account{"Vijay Shrma", 309795564763, "SBI60459CO", 89580.45};
+     Bank_Account user[10];
+     user[0] = Bank_Account{"Ansh Chovatiya", 300556477845, "SBI60459CO", 855000.45};    // user 1
+     user[1] = Bank_Account{"Romin Maldiya", 300548556354, "SBI60459CO", 2500900.93};    // user 2
+     user[2] = Bank_Account{"Ridham Pansuriya", 308755647854, "SBI60459CO", 95000.46};   // user 3
+     user[3] = Bank_Account{"Vivek Morya", 30089715564974, "SBI60459CO", 15800.45};      // user 4
+     user[4] = Bank_Account{"Vijay Sahrma", 309795564763, "SBI60459CO", 89580.45};       // user 5
+     user[5] = Bank_Account{"Avinash Rakholiya", 309795526435, "SBI60459CO", 656580.45}; // user 6
+     user[6] = Bank_Account{"Abhishek Savani", 309795586471, "SBI60459CO", 465280.45};   // user 7
+     user[6] = Bank_Account{"Abhijeet Pandit", 309795585412, "SBI60459CO", 6580.45};     // user 8
+     user[6] = Bank_Account{"Divayesh Raddiya", 309795415426, "SBI60459CO", 481280.45};  // user 9
+     user[6] = Bank_Account{"Sujal Gajera", 309795585252, "SBI60459CO", 481280.45};      // user 10
 
      int n;
 
      do
      {
+          cout << endl
+               << "-------------------------------------------------------------------------" << endl
+               << " ";
 
           cout
               << endl
-              << "Check Balance enter 1" << endl;
-          cout << "Deposit money enter 2 " << endl;
-          cout << "Withdraw money enter 3 " << endl;
+              << "Check Balance enter 1\n"
+              << endl;
+          cout << "Deposit money enter 2 \n"
+               << endl;
+          cout << "Withdraw money enter 3\n " << endl;
+          cout << "Transfer money enter 4 \n"
+               << endl;
           cout << "Exit enter 0 " << endl
                << " ";
-
+          cout << endl
+               << "-------------------------------------------------------------------------" << endl
+               << " ";
           cout << endl
                << "Enter the Number : ";
           cin >> n;
@@ -172,7 +89,7 @@ int main()
           {
                goto end;
           }
-          if (n > 3 || n < 0)
+          else if (n > 4 || n < 0)
           {
                cout << endl
                     << "Invalid Number ! " << endl
@@ -182,10 +99,10 @@ int main()
 
           int v;
           cout << endl
-               << "Enter the User number : ";
+               << "Enter your User number : ";
           cin >> v;
 
-          if (v < 1 || v > 5)
+          if (v < 1 || v > 10)
           {
                cout << endl
                     << "Invalid User Number !" << endl
@@ -195,36 +112,211 @@ int main()
 
           if (n == 1)
           {
-               user[v - 1].Print_data();
-               user[v - 1].Make_Receipt(1);
+               // this section is for checking bank balance
+               user[v - 1].Check_Balance();
+               user[v - 1].Make_Receipt(n, user[v - 1], 0);
           }
 
           else if (n == 2)
           {
+               // this section is for depositing money from bank account
                double Amount;
                cout << endl
                     << "Enter the amount : ";
                cin >> Amount;
                user[v - 1].Deposit(Amount);
-               user[v - 1].Make_Receipt(2, Amount);
+               user[v - 1].Make_Receipt(n, user[v - 1], Amount);
           }
 
           else if (n == 3)
           {
+               // this section is for withdrawing money from bank account
                double Amount;
                cout << endl
                     << "Enter the amount : ";
                cin >> Amount;
                user[v - 1].Withdraw(Amount);
-               user[v - 1].Make_Receipt(3, Amount);
+               user[v - 1].Make_Receipt(n, user[v - 1], Amount);
+          }
+          else if (n == 4)
+          {
+               // this section is for transferring money account to account
+               int client;
+
+               cout << endl
+                    << "To which user you want to transfer money : ";
+               cin >> client;
+
+               double Amount;
+               cout << endl
+                    << "Enter the amount : ";
+               cin >> Amount;
+               user[v - 1].Account_to_Account(user[client - 1], Amount);
+               user[v - 1].Make_Receipt(n, user[client - 1], Amount);
           }
 
      end:
           cout << endl
                << "Session  is complete" << endl;
 
-          cout << endl
-               << "-------------------------------------------------------------------------" << endl
-               << " ";
      } while (n != 0);
+}
+
+// this will handle transition between two account
+void Bank_Account ::Account_to_Account(Bank_Account &client, double money)
+{
+
+     if (money <= 0)
+     {
+          cout << endl
+               << "Invalid Input " << endl
+               << " ";
+     }
+     else
+     {
+          Account_Balance -= money;
+          client.Account_Balance += money;
+
+          cout << endl
+               << "The money has been transferred " << name << " to " << client.name << " " << endl
+               << " ";
+          cout << endl
+               << "Current Status  " << endl
+               << " ";
+          Print_data();
+     }
+}
+
+// this function will make receipt of the transition
+void Bank_Account ::Make_Receipt(int a, Bank_Account client, double amount1 = 0)
+{
+     // this method will convert string name to array of characters
+     char Name[100];
+     int i = 0;
+     while (name[i] != '\0')
+     {
+          Name[i] = name[i];
+          i++;
+     }
+     Name[i] = '\0';
+
+     // this method will convert string IFSC_CODE to array of characters
+     char Code[100];
+     int t = 0;
+     while (IFSC_Code[t] != '\0')
+     {
+          Code[t] = IFSC_Code[t];
+          t++;
+     }
+     Code[t] = '\0';
+
+     char Cname[100];
+     int u = 0;
+     while (client.name[u] != '\0')
+     {
+          Cname[u] = client.name[u];
+          u++;
+     }
+     Cname[u] = '\0';
+
+     // this will make a file and store data in it
+     FILE *ptr1;
+     ptr1 = fopen("Receipt.txt", "w");
+     fprintf(ptr1, "________________________________RECEIPT________________________________\n");
+
+     if (a == 1)
+     {
+          fprintf(ptr1, "\nHello %s , here is details of your Account\n", Cname);
+     }
+     else if (a == 2)
+     {
+          fprintf(ptr1, "\nThe Amount of %.2lf Rs. has Been Deposited by user %s\n \nCurrent Status\n", amount1, Cname);
+     }
+     else if (a == 3)
+     {
+          fprintf(ptr1, "\nThe Amount %.2lf Rs. has Been Withdrawn by %s\n \nCurrent Status\n", amount1, Cname);
+     }
+     else if (a == 4)
+     {
+          fprintf(ptr1, "\nThe Amount %.2lf Rs. has Been transferred to user %s \n \nCurrent Status\n", amount1, Cname);
+     }
+
+     fprintf(ptr1, "\nName            : %s\n", Name);
+     fprintf(ptr1, "Account Number  : %lld\n", Account_Number);
+     fprintf(ptr1, "IFSC code       : %s\n", Code);
+     fprintf(ptr1, "Account Balance : %.2f\n", Account_Balance);
+     fprintf(ptr1, "\n_______________________________________________________________________\n");
+     fclose(ptr1);
+}
+
+// this function will do withdraw operations
+void Bank_Account ::Withdraw(double money)
+{
+     if (money <= 0)
+     {
+          cout << endl
+               << "INVALID AMOUNT !" << endl
+               << " ";
+     }
+
+     else if (money > Account_Balance)
+     {
+          cout << endl
+               << "INSUFFICIENT BALANCE !" << endl
+               << " ";
+     }
+
+     else
+     {
+          Account_Balance -= money;
+          cout << endl
+               << "The Amount of Rs. " << money << " has been Withdrawn by " << name << endl
+               << " ";
+
+          cout << endl
+               << "Current Status  " << endl
+               << " ";
+          Print_data();
+     }
+}
+
+void Bank_Account ::Deposit(double money)
+{
+     if (money <= 0)
+     {
+          cout << endl
+               << "INVALID AMOUNT !" << endl
+               << " ";
+     }
+     else
+     {
+          Account_Balance += money;
+          cout << endl
+               << "The Amount of Rs. " << money << " has been Deposited by " << name << endl
+               << " ";
+          cout << endl
+               << "Current Status " << endl
+               << " ";
+          Print_data();
+     }
+}
+
+// this function will print data of object
+void Bank_Account ::Print_data()
+{
+     cout << endl
+          << "Name            : " << name << endl
+          << "Account Number  : " << Account_Number << endl;
+     cout << "IFSC code       : " << IFSC_Code << endl;
+     cout << "Account Balance : " << Account_Balance << endl
+          << " ";
+}
+
+void Bank_Account ::Check_Balance()
+{
+
+     cout << endl
+          << "Hello " << name << ", here is details of your Account" << endl
+          << " ";
+     Print_data();
 }
