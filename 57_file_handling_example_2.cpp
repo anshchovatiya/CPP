@@ -13,8 +13,8 @@ int main()
 
     // an.close();
 
-    ifstream rv("57_exa.txt");
-    ofstream out("57_exa1.txt");
+    ifstream rv("exa.txt");
+    ofstream out("exa1.txt");
 
     string receive;
 
