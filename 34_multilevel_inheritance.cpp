@@ -11,7 +11,7 @@ protected:
 
 public:
     void get_data(string, int);
-    void print_data();
+    
 };
 
 // this is inherited calss Exam whoms base class is Student
