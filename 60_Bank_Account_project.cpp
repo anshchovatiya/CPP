@@ -17,9 +17,9 @@ public:
      Bank_Account(){};
 
      // this constructor function will set the data of object
-     Bank_Account(string name, long long int Ac_number, string code, double balance)
+     Bank_Account(string name1, long long int Ac_number, string code, double balance)
      {
-          this->name = name;
+          this->name = name1;
           Account_Number = Ac_number;
           IFSC_Code = code;
           Account_Balance = balance;
@@ -58,7 +58,7 @@ public:
           }
      }
 
-     // this function will do deposit operations
+     // this function will do withdraw operations
      void Withdraw(double money)
      {
           if (money <= 0)
@@ -102,7 +102,7 @@ public:
           }
           Name[i] = '\0';
 
-          // this method will convert string name to array of characters
+          // this method will convert string IFSC_CODE to array of characters
           char Code[100];
           int t = 0;
           while (IFSC_Code[t] != '\0')

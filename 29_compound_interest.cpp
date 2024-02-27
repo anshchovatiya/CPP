@@ -7,7 +7,7 @@ using namespace std;
 
 class compound
 {
-    float interest_rate, Interest;
+    float interest_rate, Interest;                 
 
 public:
     compound(){};
