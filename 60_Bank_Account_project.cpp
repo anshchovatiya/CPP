@@ -10,22 +10,28 @@ protected:
      long long int Account_Number;
      string IFSC_Code;
      double Account_Balance;
+     string Password;
 
 public:
      // this is default constructor function
      Bank_Account(){};
 
      // this constructor function will set the data of object
-     Bank_Account(string name1, long long int Ac_number, string code, double balance)
+     Bank_Account(string name1, long long int Ac_number, string code, double balance, string Password1)
      {
           this->name = name1;
           Account_Number = Ac_number;
           IFSC_Code = code;
           Account_Balance = balance;
+          this->Password = Password1;
      };
 
-     // this will handle transition between two account
-     void Account_to_Account(Bank_Account &client, double);
+     // this will check the password
+
+     int Check_password(string temp);
+
+         // this will handle transition between two account
+         void Account_to_Account(Bank_Account &client, double);
 
      // this function will print data of object
      void Print_data();
@@ -48,16 +54,16 @@ int main()
 {
      // this is data of user in bank
      Bank_Account user[10];
-     user[0] = Bank_Account{"Ansh Chovatiya", 300556477845, "SBI60459CO", 855000.45};    // user 1
-     user[1] = Bank_Account{"Romin Maldiya", 300548556354, "SBI60459CO", 2500900.93};    // user 2
-     user[2] = Bank_Account{"Ridham Pansuriya", 308755647854, "SBI60459CO", 95000.46};   // user 3
-     user[3] = Bank_Account{"Vivek Morya", 30089715564974, "SBI60459CO", 15800.45};      // user 4
-     user[4] = Bank_Account{"Vijay Sahrma", 309795564763, "SBI60459CO", 89580.45};       // user 5
-     user[5] = Bank_Account{"Avinash Rakholiya", 309795526435, "SBI60459CO", 656580.45}; // user 6
-     user[6] = Bank_Account{"Abhishek Savani", 309795586471, "SBI60459CO", 465280.45};   // user 7
-     user[6] = Bank_Account{"Abhijeet Pandit", 309795585412, "SBI60459CO", 6580.45};     // user 8
-     user[6] = Bank_Account{"Divayesh Raddiya", 309795415426, "SBI60459CO", 481280.45};  // user 9
-     user[6] = Bank_Account{"Sujal Gajera", 309795585252, "SBI60459CO", 481280.45};      // user 10
+     user[0] = Bank_Account{"Ansh Chovatiya", 300556477845, "SBI60459CO", 855000.45, "3009857"};    // user 1
+     user[1] = Bank_Account{"Romin Maldiya", 300548556354, "SBI60459CO", 2500900.93, "3554848"};    // user 2
+     user[2] = Bank_Account{"Ridham Pansuriya", 308755647854, "SBI60459CO", 95000.46, "4584940"};   // user 3
+     user[3] = Bank_Account{"Vivek Morya", 30089715564974, "SBI60459CO", 15800.45, "5484353"};      // user 4
+     user[4] = Bank_Account{"Vijay Sahrma", 309795564763, "SBI60459CO", 89580.45, "3458584"};       // user 5
+     user[5] = Bank_Account{"Avinash Rakholiya", 309795526435, "SBI60459CO", 656580.45, "3485833"}; // user 6
+     user[6] = Bank_Account{"Abhishek Savani", 309795586471, "SBI60459CO", 465280.45, "7777777"};   // user 7
+     user[7] = Bank_Account{"Abhijeet Pandit", 309795585412, "SBI60459CO", 6580.45, "4584845"};     // user 8
+     user[8] = Bank_Account{"Divayesh Raddiya", 309795415426, "SBI60459CO", 481280.45, "3485345"};  // user 9
+     user[9] = Bank_Account{"Sujal Gajera", 309795585252, "SBI60459CO", 481280.45, "4383438"};      // user 10
 
      int n;
 
@@ -109,6 +115,18 @@ int main()
                     << " ";
                goto end;
           }
+
+          //      string pass;
+
+          //      cout << endl << "Entere your Password : " ;
+          //      cin >> pass;
+
+          //     int Check = user[v-1].Check_password(pass);
+
+          //     if(Check == 0)
+          //     {
+          //      goto end;
+          //     }
 
           if (n == 1)
           {
@@ -219,6 +237,15 @@ void Bank_Account ::Make_Receipt(int a, Bank_Account client, double amount1 = 0)
      }
      Cname[u] = '\0';
 
+     char CName[100];
+     int ou = 0;
+     while (name[ou] != '\0')
+     {
+          CName[ou] = name[ou];
+          ou++;
+     }
+     Cname[ou] = '\0';
+
      // this will make a file and store data in it
      FILE *ptr1;
      ptr1 = fopen("Receipt.txt", "w");
@@ -238,7 +265,7 @@ void Bank_Account ::Make_Receipt(int a, Bank_Account client, double amount1 = 0)
      }
      else if (a == 4)
      {
-          fprintf(ptr1, "\nThe Amount %.2lf Rs. has Been transferred to user %s \n \nCurrent Status\n", amount1, Cname);
+          fprintf(ptr1, "\nThe Amount %.2lf Rs. has Been transferred by %s to %s \n \nCurrent Status\n", amount1, CName, Cname);
      }
 
      fprintf(ptr1, "\nName            : %s\n", Name);
@@ -319,4 +346,19 @@ void Bank_Account ::Check_Balance()
           << "Hello " << name << ", here is details of your Account" << endl
           << " ";
      Print_data();
+}
+
+int Bank_Account ::Check_password(string temp)
+{
+     if (temp != Password)
+     {
+          cout << endl
+               << "Invalid Password ! " << endl
+               << " ";
+          return 0;
+     }
+     else
+     {
+          return 1;
+     }
 }
