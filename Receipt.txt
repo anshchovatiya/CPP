@@ -1,12 +1,10 @@
 ________________________________RECEIPT________________________________
 
-The Amount 52200.00 Rs. has Been transferred by Ansh Chovatiya to Romin Maldiya 
- 
-Current Status
+Hello Romin Maldiya , here is details of your Account
 
-Name            : Ansh Chovatiya
-Account Number  : 300556477845
+Name            : Romin Maldiya
+Account Number  : 300548556354
 IFSC code       : SBI60459CO
-Account Balance : 802800.45
+Account Balance : 2555900.93
 
 _______________________________________________________________________

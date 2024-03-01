@@ -30,8 +30,8 @@ public:
 
      int Check_password(string temp);
 
-         // this will handle transition between two account
-         void Account_to_Account(Bank_Account &client, double);
+     // this will handle transition between two account
+     void Account_to_Account(Bank_Account &client, double);
 
      // this function will print data of object
      void Print_data();
@@ -116,17 +116,22 @@ int main()
                goto end;
           }
 
-          //      string pass;
+          else
+          {
+               // this condition will check password
+               string pass;
 
-          //      cout << endl << "Entere your Password : " ;
-          //      cin >> pass;
+               cout << endl
+                    << "Entere your Password : ";
+               cin >> pass;
 
-          //     int Check = user[v-1].Check_password(pass);
+               int Check1 = user[v - 1].Check_password(pass);
 
-          //     if(Check == 0)
-          //     {
-          //      goto end;
-          //     }
+               if (Check1 == 0)
+               {
+                    goto end;
+               }
+          }
 
           if (n == 1)
           {
@@ -164,6 +169,14 @@ int main()
                cout << endl
                     << "To which user you want to transfer money : ";
                cin >> client;
+
+               if (client < 1 || client > 10)
+               {
+                    cout << endl
+                         << "Invalid User Number !" << endl
+                         << " ";
+                    goto end;
+               }
 
                double Amount;
                cout << endl
@@ -357,8 +370,5 @@ int Bank_Account ::Check_password(string temp)
                << " ";
           return 0;
      }
-     else
-     {
-          return 1;
-     }
+     return 1;
 }
