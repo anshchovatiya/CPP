@@ -201,7 +201,7 @@ int main()
                    << " ";
                cout << endl
                     << "                                Amrut Restaurant                               " << endl
-                    << "                        156, sai apartment,punagam road,surat                  " << endl
+                    << "                      156, sai apartment,punagam road,surat                    " << endl
                     << "                             Mobile NO : 7863074845                            " << endl
                     << " ";
 
@@ -243,7 +243,7 @@ int main()
                     << "--------------------------------------------------------------------------------"
                     << endl
                     << " ";
-               double GST = (total * 18) / 100;
+               double GST = (total * 18.0) / 100.0;
 
                cout << endl
                     << "                "
