@@ -17,18 +17,18 @@ private:
 
         if (Dis <= 1000)
         {
-            fuel = (Dis * 500) / 1000;
+            fuel = (Dis * 500.0) / 1000;
         }
         else if (Dis > 1000 && Dis <= 2000)
         {
             Dis-=1000;
-            fuel =  (Dis * 1100) / 2000 + 500;
+            fuel =  (Dis * 1100.0) / 2000 + 500;
         }
         else if (Dis > 2000)
         {
             Dis-= 2000;
 
-            fuel = (Dis * 2200) / 2000 + 1600;
+            fuel = (Dis * 2200.0) / 2000 + 1600;
 
         }
 
